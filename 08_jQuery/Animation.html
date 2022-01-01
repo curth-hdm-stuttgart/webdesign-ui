@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script>
+   jQuery.noConflict();
+   jQuery(document).ready(function(){
+    jQuery("p:last").mouseover(function(){
+      jQuery("#hide").fadeToggle();
+    });
+     jQuery("p:first").mouseover(function(){
+      jQuery("#hide").fadeToggle();
+    });
+  });
+  </script>
+ </head>
+ <body>
+  <p>This is a paragraph with little content.</p>
+  <p id="hide">This is another small paragraph.</p>
+ </body>
+</html> 
