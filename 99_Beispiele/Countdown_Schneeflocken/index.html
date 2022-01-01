@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+        "Countdown"
+        Vorlesung Webdesign (UI)
+        Peter Curth
+
+        Quelle: https://youtu.be/Rib69h2DOxg
+-->
+<head>
+    <title>Countdown bis Weihnachten</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="coming-soon">
+        <div>
+            <h2>Bald ist Weihnachten</h2>
+            <div class="countdown">
+                <div class="container-day">
+                    <h3 class="day">&nbsp;</h3>
+                    <h3>Tage</h3>
+                </div>
+                <div class="container-hour">
+                    <h3 class="hour">&nbsp;</h3>
+                    <h3>Stunden</h3>
+                </div>
+                <div class="container-day">
+                    <h3 class="minute">&nbsp;</h3>
+                    <h3>Minuten</h3>
+                </div>
+                <div class="container-second">
+                    <h3 class="second">&nbsp;</h3>
+                    <h3>Sekunden</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--- Wir laden das Script am Ende, damit das HTML vorher gerendered wurde -->
+    <script src="./app.js"></script>
+
+    <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js" crossorigin="anonymous"></script>
+    <script>
+        var sf = new Snowflakes({
+            color: "#ffffff"
+        });
+    </script>
+</body>

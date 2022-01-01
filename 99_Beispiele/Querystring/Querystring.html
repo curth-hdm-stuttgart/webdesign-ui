@@ -1,0 +1,20 @@
+<script>
+    //  Wie kann man den übergebenen Query String auslesen?
+    const queryString = window.location.search;
+
+    console.log(queryString);       //  Mal den Querystring anschauen...
+
+    const urlParams = new URLSearchParams(queryString);
+    
+    //  Gibt es den Parameter überhaupt?
+    if (urlParams.has('Name'))
+    {
+        const username = urlParams.get('Name');
+        document.write("Hallo " + username);
+    }
+    else
+    {
+        document.write("Hallo Unbekannter...");
+    }
+
+</script>

@@ -1,0 +1,57 @@
+<html>
+ <head>
+  <title>Drag</title>
+
+  <script type="text/javascript">
+        // Quelle: de.selfhtml.org
+        // Das Objekt, das gerade bewegt wird.
+        var dragobjekt = null;
+
+        // Position, an der das Objekt angeklickt wurde.
+        var dragx = 0;
+        var dragy = 0;
+
+        // Koordinaten der Mausposition
+        var posx = 0;
+        var posy = 0;
+
+        function draginit()  // Initialisierung der Überwachung der Events
+        {
+            document.onmousemove = drag; // Definition einer Ereignisüberwachung für das Event onousemove
+            document.onmouseup = dragstop;  // Definition einer Ereignisüberwachung für das Event onmouseup
+        }
+
+        function dragstart(e)  // Wird aufgerufen, wenn ein Objekt bewegt werden soll.
+        {
+            dragobjekt = e;         //...
+            console.log(dragobjekt.innerHTML);
+            dragx = posx - dragobjekt.offsetLeft;
+            dragy = posy - dragobjekt.offsetTop;
+        }
+
+        function dragstop()  // Wird aufgerufen, wenn ein Objekt nicht mehr bewegt werden soll.
+        { 
+            dragobjekt=null;
+        }
+
+        function drag(ereignis) // Wird aufgerufen, wenn die Maus bewegt wird und bewegt bei Bedarf das Objekt.
+        {
+            posx = ereignis.pageX; 
+            posy = ereignis.pageY; 
+
+            if(dragobjekt != null)
+            {
+            dragobjekt.style.left = (posx - dragx) + "px";
+            dragobjekt.style.top = (posy - dragy) + "px";
+            }
+        } 
+</script>
+
+ </head>
+ <body onload="draginit()">
+    <!-- this erklären -->
+  <div onmousedown="dragstart(this)" 
+      style="position:absolute;border-radius:10px;top:0px;left:0px;height:100px;width:100px;background:#ff0000;">
+  Hallo</div>
+ </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <style>
+    /* Wir geben allen Elementen einen blauen Rahmen */
+     body * {
+       margin: 10px;
+       border: 1px solid blue;
+     }
+ </style>
+</header>
+<body>
+  <!-- Klicken Sie auf das P Element und sehen Sie, wie die Events von innen nach aussen abgearbeitet werden. -->
+  <form onclick="alert('form')">FORM
+    <div onclick="alert('div')">DIV
+      <p onclick="alert('p')">P</p>
+    </div>
+  </form>
+</body>
+</html>
+  

@@ -1,0 +1,14 @@
+<html>
+  <body>
+  <script type="text/javascript">
+    var a=21;      //  Diese Variable ist global definiert
+    function intern() {
+      var a=42;         //  Diese ist lokal definiert (heißt gleich, ist aber eine Andere)
+      document.write("<br/>Innen: " + a);
+    }
+    document.write("Aussen: " +a);
+    intern();
+    document.write("<br/>Aussen: "+a);
+  </script>
+  </body>
+</html>

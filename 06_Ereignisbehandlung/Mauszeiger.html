@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function handlerRegistrieren() {
+            document.addEventListener('mousemove', getCursorXY);
+
+            // Was genauso geht:
+            // document.onmousemove = getCursorXY;
+        }
+
+        //  Event-Handler: Die Details zum Event stehen in "e".
+        //  Wenn Sie mehr über die einzelnen Koordinaten wissen wollen, finden Sie das hier:
+        //  https://youtu.be/dxADq_DlS-w
+        function getCursorXY(e) {
+            document.getElementById('cursorX').value = e.clientX + '|' + e.pageX;  
+            document.getElementById('cursorY').value = e.clientY + '|' + e.pageY;
+        }
+    </script>
+</head>
+
+
+<body onload="handlerRegistrieren()">
+    <h1>Wo ist mein Mauszeiger?</h1>
+    <form name="Form1">
+        POSX: <input type="text" id="cursorX"><br/>
+        POSY: <input type="text" id="cursorY">
+    </form>
+</body>
+</html>

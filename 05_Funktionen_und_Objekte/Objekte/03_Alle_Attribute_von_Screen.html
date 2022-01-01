@@ -1,0 +1,30 @@
+<script>
+
+    function objProperties(myObject){
+
+        //  Wir wollen eine Tabelle ausgeben. Damit schreiben wir den Tabellenheader
+        document.write("<table border='1'>");
+        document.write("<tr><th>Attributname</th><th>Wert</th><th>Typ</th></tr>")
+        
+        //  Diese Form der "for" Schleife kennen Sie noch nicht:
+        //  Sie definiert eine neue Variable "property" und die Schleife wird für jedes
+        //  Element in myObject aufgerufen. Hier also für jedes einzelne Element.
+        for( property in myObject ) { 
+
+            document.write("<tr><td>" + property + "</td><td>" + myObject[property] + "</td><td>" + typeof(myObject[property]) + "</td></tr>"); 
+        
+        }
+
+        //  Jetzt machen wir die Tabelle noch "zu"
+        document.write("</table>");
+    }
+
+    //  Beispielobjekt definieren:
+    //var Paketempfaenger = { Name: "Peter Curth", Strasse: "Strassenname",  Hausnummer: 3, Ort: "Ortsname" };
+    //objProperties(Paketempfaenger);
+
+    // Das sind zum Beispiel die Eigenschaften des Window Objekts
+    objProperties(window.document.links);
+
+</script>
+<a href="www.google.de">Mein Link</a>

@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Drag</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        .quadrat {
+            position:absolute;
+            left:0px;
+            height:100px;
+            width:100px;
+        }
+    </style>
+    <script type="text/javascript">
+        // Quelle: de.selfhtml.org
+        // Das Objekt, das gerade bewegt wird.
+        var dragobjekt = null;
+
+        // Position, an der das Objekt angeklickt wurde.
+        var dragx = 0;
+        var dragy = 0;
+
+        // Koordinaten der Mausposition
+        var posx = 0;
+        var posy = 0;
+
+        function draginit()  // Initialisierung der Überwachung der Events
+        {
+            document.onmousemove = drag; // Definition einer Ereignisüberwachung für das Event onousemove
+            document.onmouseup = dragstop;  // Definition einer Ereignisüberwachung für das Event onmouseup
+        }
+
+        function dragstart(element)  // Wird aufgerufen, wenn ein Objekt bewegt werden soll.
+        {
+            dragobjekt = element;
+            dragx = posx - dragobjekt.offsetLeft;
+            dragy = posy - dragobjekt.offsetTop;
+        }
+
+        function dragstop()  // Wird aufgerufen, wenn ein Objekt nicht mehr bewegt werden soll.
+        { 
+            dragobjekt=null;
+        }
+
+        function drag(ereignis) // Wird aufgerufen, wenn die Maus bewegt wird und bewegt bei Bedarf das Objekt.
+        {
+            if (document.all)  // Abfrage ob Microsoft-Browser
+            {   posx = window.event.clientX; }
+            else
+            {   posx = ereignis.pageX; } 
+            if (document.all)  // Abfrage ob Microsoft-Browser
+            {   posy = window.event.clientY; }
+            else
+            {   posy = ereignis.pageY; }
+            
+            if(dragobjekt != null)
+            {
+                dragobjekt.style.left = (posx - dragx) + "px";
+                dragobjekt.style.top = (posy - dragy) + "px";
+            }
+        } 
+    </script>
+</head>
+<body onload="draginit()">
+    <div onmousedown="dragstart(this)" class="quadrat" 
+      style="top:0px;background:#ff0000;">
+    </div>
+    <div onmousedown="dragstart(this)" class="quadrat"
+        style="top:150px;background:green;">
+    </div>
+    <div onmousedown="dragstart(this)" class="quadrat"
+        style="top:300px;background:blue;">
+    </div>
+</body>
+</html>

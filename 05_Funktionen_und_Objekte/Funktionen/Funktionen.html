@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript"> 
+     //   Funktion zum Ausrechnen des Quadrats
+     //     Parammeter:   x....
+     //     Rückgabe:  Quadrat von x
+     function quadrat(x) 
+      {
+       var x2;
+       x2=x*x;
+       return x2;
+      }
+
+      function potenz(x,y) //für x,y >0       x^y = x * x * x *...... * x
+      { 
+        var hilf=x;
+        for (var i=1; i < y; i++)
+            hilf=x*hilf;
+        return hilf;
+      }
+
+      function gebeTextFuerPotenzAus()
+      {
+          var x = prompt("Welche Basis?");
+          var y = prompt("Welcher Exponent?");
+          var ergebnis = potenz(x,y);
+          alert("Die von uns berechnete Potenz von " + x + " hoch " + y + " ist: " + ergebnis);
+      }
+
+    </script>
+  </head>
+  <body>
+    <a href="javascript:gebeTextFuerPotenzAus()">Potenz berechnen</a><br>
+  </body>
+</html>

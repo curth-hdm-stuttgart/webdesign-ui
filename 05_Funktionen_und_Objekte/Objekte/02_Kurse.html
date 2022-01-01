@@ -1,0 +1,72 @@
+<script>
+
+
+   function f(Objekt){
+      document.write("<table border='1'>");
+      document.write("<tr><th>Attributname</th><th>Wert</th><th>Typ</th></tr>")
+      for( eigenschaft in Objekt ) { 
+         document.write("<tr><td>" + eigenschaft + "</td><td>" + Objekt[eigenschaft] + "</td><td>" + typeof(Objekt[eigenschaft]) + "</td></tr>"); 
+      }
+      document.write("</table>");
+      document.write("Das Objekt hat " + Object.keys(Objekt).length + " Elemente.");
+   }
+
+   var kurs_anders = new Object();
+   kurs_anders.Eigenschaft1 = "Hallo";
+   kurs_anders.Zahl = 42;
+   document.write("")
+   var kurs_ganzanders = { neuesElement: "Test" };
+
+   var kurs = { 
+      title: "Webdesign (UI)",
+      referent: "Peter Curth",
+      description: "Das ist ein Kurs, in dem man Javascript Programmieren lernt...",
+      anzahl_teilnehmer: 32,
+      freie_plaetze: 3,
+
+      belege_platz: function() {
+         this.anzahl_teilnehmer += 1;
+         this.freie_plaetze -= 1;
+      },
+
+      kursname: function () {
+         document.write("Kursbezeichnung " + this.title + "<br/>");
+      },
+      gebe_teilnehmeranzahl_aus: function () {
+         document.write("Anzahl Teilnehmer " + this.anzahl_teilnehmer + " (Freie Plätze: " + this.freie_plaetze + ")<br/>");
+      }
+   }
+   kurs.neuesAttribut = "Test";
+   f(kurs);
+
+
+   kurs.anzahl_teilnehmer = 323;
+   kurs['anzahl_teilnehmer'] = 33;
+
+
+ //  kurs.kursname();                          // Kursbezeichnung ausgeben
+   //kurs.gebe_teilnehmeranzahl_aus();         // Anzahl der Teilnehmer anzeigen
+
+   //f(kurs);
+  // f(screen);
+   //f(window);
+
+
+
+   //  Ganzes Object ausgeben
+ //  document.write(JSON.stringify(kurs) + "<br/>");
+
+   // Der Eigenschaft einen neuen Wert zuweisen
+   //kurs.freie_plaetze = kurs.freie_plaetze - 1;
+   //kurs.freie_plaetze -= 1;
+   //kurs.freie_plaetze--;                     
+   //kurs.gebe_teilnehmeranzahl_aus();
+
+   //  Einen platz im Kurs belegen
+   kurs.belege_platz();       
+   //kurs.gebe_teilnehmeranzahl_aus();
+
+   //  Ganzes Object ausgeben
+ //  document.write(JSON.stringify(kurs));
+
+</script>

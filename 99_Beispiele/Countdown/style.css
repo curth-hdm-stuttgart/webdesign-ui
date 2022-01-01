@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #000;
+    color: #AAAAAA;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 3rem;
+}
+
+.coming-soon {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+}
+
+.day,.hour,.minute,.second {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.waiting {
+    height: 50vh;
+}

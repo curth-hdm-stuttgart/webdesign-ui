@@ -1,0 +1,32 @@
+<html>
+<title>Cookie Test</title>
+<head>
+        <script src="js.cookie.min.js"></script>
+        <script>
+            
+            //  Lese das Cookie aus
+            var meincookie = Cookies.get("meinname")
+            var meincookie2 = Cookies.get("anderername")
+
+            if (!meincookie2)
+            {
+                Cookies.set('anderername', 2+2);
+                Cookies.set('meintrackingcode', 'dbdgdizw9e8');
+            }
+
+            if (!meincookie)
+            {
+                //  Ist leer, dann setze ich es....
+                var dername = prompt("Du hast die Seite nie besucht. Wie ist Dein Name?")
+                Cookies.set('meinname', dername);
+            }
+            else
+            {
+                //  Ist nicht leer, dann gebe ich es aus
+                alert('Hallo, ' + meincookie);
+            }
+        </script>
+</head>
+<body>
+</body> 
+</html>

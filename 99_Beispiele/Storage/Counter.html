@@ -1,0 +1,37 @@
+<!-- 
+
+      Dieses Beispiel schreibt daten in den "local Storage" des Browsers
+      
+-->
+<!DOCTYPE html>
+<html> 
+ <head>  
+  <meta charset="utf-8"/>          
+  <title>Persönliche Seitenbesuche zählen</title>    
+  <script type="text/javascript">            
+   function Zaehlerstand ()       
+    { 
+      var zaehler = parseInt(localStorage.getItem("counter"));
+        if (zaehler > 0)
+             { zaehler++;
+               localStorage.setItem("counter", zaehler);
+             }
+        else // Initialisierung des Zählers beim ersten Aufruf der Seite   
+        { 
+           zaehler=1;
+           localStorage.setItem("counter", 1)
+        }        
+      return (zaehler);
+    }    
+  </script>   
+ </head>   
+
+ <body>      
+    <h1>Eine Seite, die etwas über Sie wei&szlig;...</h1>      
+    <script type="text/javascript">
+      var x = Zaehlerstand();
+      document.write("<p>Dies ist Ihr <b>" + x + ". <\/b> Besuch auf dieser Seite <\/p>");
+    </script>
+    <p>Benutzen Sie doch mal die Reload-Funktion Ihres Browsers ...</p>     
+   </body>
+  </html>

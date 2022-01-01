@@ -1,0 +1,45 @@
+<html>
+ <head>
+   <title>Test</title>
+   <script type="text/javascript">
+     function TasteGedrueckt (Ereignis)
+     {
+       //if (!Ereignis)
+       //  Ereignis = window.event;
+        Tastencode = Ereignis.keyCode;
+        if (Ereignis.shiftKey) {
+          document.formular.ausgabe.value = "Shift mit " + Tastencode + " gedrückt.";
+        }
+        else{
+          document.formular.ausgabe.value = "Taste mit Dezimalwert " + Tastencode + " gedrückt";
+        }
+     }
+     
+     function TasteGedruecktundLosgelassen(Ereignis)
+     {
+      Tastencode = Ereignis.which;
+       document.formular.ausgabe.value = "ASCII Code lautet " + Tastencode + "";
+
+     }
+     function TasteLosgelassen (Ereignis)
+     {
+      if (!Ereignis)
+        Ereignis = window.event;
+      if (Ereignis.which)
+       { Tastencode = Ereignis.which; } 
+      document.formular.ausgabe.value = "Taste mit Dezimalwert " + Tastencode + " losgelassen";
+     }
+    
+    document.onkeydown = TasteGedrueckt;
+  //  document.onkeyup = TasteLosgelassen;
+ // document.onkeypress = TasteGedruecktundLosgelassen;
+  </script>
+ </head>
+ <body>
+  <form action="" name="formular">
+   <p>
+    <input type="text" name="ausgabe" readonly="readonly" size="50">
+   </p>
+  </form>
+ </body>
+</html>

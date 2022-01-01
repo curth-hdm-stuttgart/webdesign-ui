@@ -1,0 +1,28 @@
+<script>
+
+    //  So sieht ein Konto aus
+    var Konto1 = new Object();
+    Konto1.Nummer = "25262"
+    Konto1.Inhaber = "Fritz Müller"
+    Konto1.Kontostand = 43.80;
+    
+    //  Es geht sogar noch einfacher
+    var Konto2 = { Nummer: 1234, Inhaber: "Max Müller", Kontostand: 2353.20 };
+    
+    //  So können wir auf die Kontonummer zugreifen:Konto
+    //objProperties(Konto);
+    document.write("Der Kontostand:" + Konto1['Kontostand'] + "<br/>");
+
+    //  ...oder so:
+    Konto2.Kontostand = 0;
+    document.write("Der Kontostand:" + Konto2.Kontostand + "<br/>");
+
+  //  document.write(Konto2);
+    console.log(Konto2);
+
+    //  Das ganze Objekt ausgeben geht mit dem JSON Objekt...
+    // JSON = "JavaScript Object Notation"
+    
+    document.write(JSON.stringify(Konto2) + "<br/>");
+
+</script>

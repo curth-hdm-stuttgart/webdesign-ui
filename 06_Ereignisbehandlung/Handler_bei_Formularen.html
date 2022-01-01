@@ -1,0 +1,41 @@
+<html>
+ <head>
+   <title>Test</title>
+   <script type="text/javascript">
+     function TasteGedrueckt (Ereignis)
+      {
+       if (!Ereignis)
+         Ereignis = window.event;
+       if (Ereignis.which) // Netscape-Syntax
+         { 
+           Tastencode = Ereignis.which;
+         } 
+       else if (Ereignis.keyCode) // Microsoft Internet Explorer-Syntax
+         {
+          Tastencode = Ereignis.keyCode;
+         }
+       document.formular.ausgabe.value = "Taste mit Dezimalwert " + Tastencode + " gedrückt";
+     }
+     
+      function TasteLosgelassen (Ereignis)
+     {
+      if (!Ereignis)
+        Ereignis = window.event;
+      if (Ereignis.which)
+       { Tastencode = Ereignis.which; } 
+      else if (Ereignis.keyCode) 
+       { Tastencode = Ereignis.keyCode; }
+      document.formular.ausgabe.value = "Taste mit Dezimalwert " + Tastencode + " losgelassen";
+     }
+    document.onkeydown = TasteGedrueckt;
+    document.onkeyup = TasteLosgelassen;
+  </script>
+ </head>
+ <body>
+  <form action="" name="formular">
+   <p>
+    <input type="text" name="ausgabe" readonly="readonly" size="50">
+   </p>
+  </form>
+ </body>
+</html>
