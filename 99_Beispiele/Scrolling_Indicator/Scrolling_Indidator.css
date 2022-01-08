@@ -1,0 +1,27 @@
+:root {
+    --scroll: 0;
+    --scrollbar-height: 10px;
+  }
+  
+  main:before {
+    content: '';
+    width: 100%;
+    height:var(--scrollbar-height);
+    position:fixed;
+    top:0;
+    left:0;
+    background:#CCCCCC;
+    
+  }
+  
+  main:after { 
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--scrollbar-height);
+    width: var(--scroll);
+    background: #8D7ECA;
+  }
+  
+  
