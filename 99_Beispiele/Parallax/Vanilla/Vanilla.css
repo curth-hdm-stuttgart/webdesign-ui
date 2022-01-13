@@ -1,0 +1,22 @@
+#outer-container {
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+    background-color: #eeeeee;
+    height: 200vh;
+  }
+  .main-content {
+    position: relative;
+    display: inline-block;
+    background-color: red;
+    padding: 50px;
+    top: 80vh;
+  }
+  .parallax-content {
+    position: relative;
+    display: inline-block;
+    background-color: yellow;
+    padding: 50px;
+    top: 80vh;
+  }
+  
