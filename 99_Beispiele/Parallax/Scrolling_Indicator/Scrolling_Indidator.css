@@ -1,6 +1,6 @@
 :root {
     --scroll: 0;
-    --scrollbar-height: 10px;
+    --scrollbar-height: 30px;
   }
   
   main:before {
